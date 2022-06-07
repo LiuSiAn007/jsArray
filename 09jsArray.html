@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My first html page</title>
+
+    <script>
+        // The writer determines whether the following variables are of type array.
+        var a = '[a, b, c, d]';
+        var b = [1, 2, 3, 4];
+        //TODO
+        //one
+        console.log('a is Array ?',Array.isArray(a));
+        console.log('b is Array ?',Array.isArray(b));
+        console.log("THE SECOND WAY");
+        //two
+        console.log('a is Array ?',a instanceof Array);
+        console.log('b is Array ?',b instanceof Array);
+  
+        
+
+        console.log("--------------------------------");
+        // Write a program that multiplies each entry in the following array by 2。
+        var a = [1, 2, 3, 4, 5];
+        var b = [] ;
+        // TODO should output [2,4,6,8,10]
+        a.map(item => {
+            b.push (item * 2)
+        })
+        console.log(b)
+
+        console.log("--------------------------------");
+        // Write the program, according to the following requirements output results.
+        var colors = ["Red", "Green", "White", "Black"];
+        var colorStr = "'"
+        //TODO case 1 output: 'Red Green White Black'
+        // case 2 output: 'Red+Green+White+Black'
+        // case 3 output: 'Red,Green,White,Black'
+        for(var i=0; i < colors.length ; i++){
+            colorStr = colorStr + colors[i] + " "
+        }
+        colorStr = colorStr + "' "
+        console.log('case 1:',colorStr);
+        console.log("--------------------------------");
+
+        var colors2 = ["Red", "Green", "White", "Black"];
+        var colorStr2 = "'"
+        for(var i=0; i < colors2.length ; i++){
+            if(i === colors2.length-1){
+                colorStr2 = colorStr2 + colors2[i] 
+            }else {
+                colorStr2 = colorStr2 + colors2[i] + "+"
+            }
+        }
+        colorStr2 = colorStr2 + "' "
+        console.log('case 2:',colorStr2);
+        console.log("----------------------------------");
+
+        var colors3 = ["Red", "Green", "White", "Black"];
+        var colorStr3 = "'"
+        for(var i=0; i < colors3.length ; i++){
+            if(i === colors2.length-1){
+                colorStr3 = colorStr3 + colors3[i] 
+            }else {
+                colorStr3 = colorStr3 + colors3[i] + ","
+            }
+        }
+        colorStr3 = colorStr3 + "' "
+        console.log('case 3:',colorStr3);
+        console.log("----------------------------------");
+
+
+        // Write a program to sort the Numbers in the following array from largest to smallest.
+        var arr = [5, 1, 8, 10, 4];
+        //TODO should output: [10,8,5,4,1]
+        arr.sort(function(a,b){
+                    return b-a;
+                    })
+        console.log('sort array',arr);
+        console.log("------------------------------------");
+
+        // Program to find the most frequent element in the following array.
+        var repeatArr = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+        //TODO should output: 'a'
+        console.log(findMost(repeatArr));
+
+        function findMost (arr) {
+        if (!arr.length) return;
+        if (arr.length === 1) return 1;
+        let maxName, maxNum = 0
+        let res = arr.reduce((res, currentNum) => {
+            res[currentNum] ? res[currentNum] += 1 : res[currentNum] = 1
+            if (res[currentNum] > maxNum) {
+            maxNum = res[currentNum]
+            maxName = currentNum
+            }
+            return res
+        }, {})
+        return 'the most frequent element is :' + maxName 
+        }
+
+
+    </script>
+  </head>
+
+  <body>
+   
+  </body>
+</html>
